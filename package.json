@@ -1,8 +1,7 @@
 {
-  "name": "mini-webpack",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/fanqingyun/mini-webpack.git",
-  "author": "qingyun_fan <qingyun_fan@rainbowtech.net.cn>",
-  "license": "MIT"
+    "name": "mini-webpack",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/fanqingyun/mini-webpack.git",
+    "license": "MIT"
 }

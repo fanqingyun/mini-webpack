@@ -3,5 +3,15 @@
     "version": "1.0.0",
     "main": "index.js",
     "repository": "https://github.com/fanqingyun/mini-webpack.git",
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.14.3",
+        "@babel/parser": "^7.14.4",
+        "@babel/preset-env": "^7.14.4",
+        "@babel/traverse": "^7.14.2",
+        "babylon": "^6.18.0"
+    },
+    "scripts": {
+        "build": "node webpack.js > dist.js"
+    }
 }

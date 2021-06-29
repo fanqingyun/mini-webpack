@@ -13,11 +13,11 @@ function creatAsset(filePath) {
     sourceType: 'module', // 识别ES Module
   })
   // 存储依赖
-  const dependecies = []
+  const dependencies = []
   // 为了获取文件的依赖, 需要能够遍历ast，拿到ImportDeclaration节点， 于是引入@babel/traverse
   traverse(ast, {
     ImportDeclaration({ node }) {
-      dependecies.push(node.source.value)
+      dependencies.push(node.source.value)
     },
   })
 
@@ -31,7 +31,7 @@ function creatAsset(filePath) {
   return {
     id: ID++,
     filePath,
-    dependecies,
+    dependencies,
     code
   }
 }
@@ -42,7 +42,7 @@ function createGraph(entry) {
   for (let asset of graph) {
     const dir = path.dirname(asset.filePath)
     asset.mapping = {}
-    for (let relativePath of asset.dependecies) {
+    for (let relativePath of asset.dependencies) {
       // 这里做路径转化，让被依赖的文件相对与当前文件filePath，而不是webpack.js
       let childAsset = creatAsset(path.join(dir, relativePath))
       // 由于数组是动态的，这一步可以让数组遍历新推进的元素childAsset
